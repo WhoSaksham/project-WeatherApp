@@ -1,0 +1,17 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "This is my personal project Weather App",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Saksham",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "nodemon": "^2.0.19",
+    "path": "^0.12.7",
+    "requests": "^0.3.0"
+  }
+}
