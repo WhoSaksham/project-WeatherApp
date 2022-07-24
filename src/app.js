@@ -1,10 +1,7 @@
-// Setting up the dotenv
-require('dotenv').config({path: 'config.env'});
-
 const http = require("http");
 const fs = require("fs");
 const requests = require('requests');
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 8000;
 
 // Reading index.html
 const homeFile = fs.readFileSync("src/index.html", "utf-8");
@@ -26,7 +23,7 @@ const server = http.createServer((req, res) => {
   if (req.url == "/") {
     // Reading the API 
     requests(
-      `http://api.openweathermap.org/data/2.5/weather?q=agra&units=metric&appid=${process.env.APPID}`
+      `http://api.openweathermap.org/data/2.5/weather?q=agra&units=metric&appid=1132a8f72f516e8be73fb7e8cf7d8473`
     )
       .on("data", (chunk) => {
         const objdata = JSON.parse(chunk); // parsing the json data into object data
@@ -45,5 +42,5 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(port, "127.0.0.1");
+server.listen(port, '0.0.0.0');
 console.log(`Server has successfully initiated on http://127.0.0.1:${port}`)
